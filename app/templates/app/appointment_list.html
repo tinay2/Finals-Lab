@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<a href="{% url 'appointment_create' %}">+ New Appointment</a>
+
+<div class="nav right">
+</div>
+
+    {% for appointment in appointment %}
+       <div class="appointment r">
+           <h2><a href="{% url 'appointment_detail' appointment.pk %}">{{appointment.customer}}</a></h2>
+           <a>{{appointment.appointment_detail}}</a>
+
+       </div>
+    {% endfor %}
+{% endblock content %}

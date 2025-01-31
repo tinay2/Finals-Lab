@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Cleaning</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="icon" type="image/png" href="{% static './images/1.jpg' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    {% include 'app/navbar.html' %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>

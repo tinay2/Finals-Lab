@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h2>Customer Profile Details</h2>
+  <p><strong>Username:</strong> {{ customerprofile.user.username }}</p>
+  <p><strong>Address:</strong> {{ customerprofile.address }}</p>
+  <p><strong>Contact Number:</strong> {{ customerprofile.contact_number }}</p>
+
+  <a href="{% url 'customerprofile_update' customerprofile.pk %}">Edit</a> |
+  <a href="{% url 'customerprofile_delete' customerprofile.pk %}">Delete</a>
+  <a href="{% url 'customerprofile_list' %}">Back to List</a>
+{% endblock %} 

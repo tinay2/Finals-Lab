@@ -1,0 +1,76 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #body1 {
+            background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('../images/bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .content-body1 {
+            max-width: 40%;
+            padding: 2em;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent for readability */
+            border-radius: 10px;
+            text-align: left; /* Aligns text to the left */
+            margin-left: 5%; /* Space from the left edge */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds depth to the content */
+        }
+
+        .title-body1 {
+            font-size: 3em;
+            color: #eaeaea; /* Soft white */
+            margin: 0;
+        }
+
+        .text-body1 {
+            font-size: 1.2em;
+            margin-top: 1em;
+            color: #bfbfbf; /* Subtle gray */
+        }
+
+        .button-body1 {
+            display: inline-block;
+            margin-top: 1.5em;
+            padding: 0.8em 2em;
+            font-size: 1.2em;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent button */
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .button-body1:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+    <div id="body1">
+        <div class="content-body1">
+            <h1 class="title-body1">Welcome to House  Cleaning</h1>
+            <p class="text-body1">Where here clean and maintain </p>
+            <a href="{% url 'appointment' %}" class="button-body1">Book Now</a>
+        </div>
+    </div>
+{% endblock content %}

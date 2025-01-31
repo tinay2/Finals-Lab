@@ -1,0 +1,134 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #ecf0f1;
+        margin: 0;
+        padding: 0;
+        background-color: #2f3640;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #ecf0f1;
+        font-size: 2rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #e74c3c;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    /* Section Styles */
+    .about {
+        background-color: #353b48;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        background: #1e272e;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+    }
+
+    /* Paragraphs */
+    p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        color: #dcdde1;
+    }
+
+    /* Ordered List */
+    ol {
+        list-style: decimal inside;
+        padding-left: 20px;
+    }
+
+    ol li {
+        margin-bottom: 15px;
+        font-size: 1rem;
+        color: #dcdde1;
+    }
+
+    ol li strong {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+
+    /* Responsive Images */
+    .responsive-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    /* Gallery Styles */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .gallery img {
+        width: 30%;
+        border-radius: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .container {
+            width: 95%;
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        p,
+        ol li {
+            font-size: 0.9rem;
+        }
+
+        .about-content,
+        .appointment-system {
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+        }
+    }
+    </style>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Us</h2>
+
+                <p>Welcome to [House Cleaning Appointment], your go-to for hassle-free home cleaning. We make booking professional, reliable cleaners easy with our user-friendly online system. Whether you need a one-time deep clean, regular maintenance, or specialized services, our team ensures high standards and customer satisfaction. Schedule your appointment today for a cleaner, fresher home!
+                </p>
+            </div>
+
+
+        </div>
+    </section>
+    {% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <div style="background-color: #f8d7e1; padding: 20px;">
+    <h2 style="color: #333;">Customer Profiles</h2>
+    <a href="{% url 'customerprofile_create' %}" style="color: #007bff; text-decoration: none; font-size: 16px;">Create New Profile</a>
+
+    <table style="border-collapse: collapse; width: 100%; margin-top: 20px; background-color: #343a40; color: white;">
+      <thead>
+        <tr style="background-color: #495057;">
+          <th style="padding: 12px;">Username</th>
+          <th style="padding: 12px;">Contact Number</th>
+          <th style="padding: 12px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for profile in customerprofile %}
+          <tr style="background-color: {% if forloop.counter0|divisibleby:2 %}#212529{% else %}#343a40{% endif %};">
+            <td style="padding: 8px;">
+              <a href="{% url 'customerprofile_detail' profile.pk %}" style="color: #17a2b8; text-decoration: none;">
+                {{ profile.user.username|default:"Unknown" }}
+              </a>
+            </td>
+            <td style="padding: 8px;">{{ profile.contact_number|default:"No Contact Info" }}</td>
+            <td style="padding: 8px;">
+              <a href="{% url 'customerprofile_update' profile.pk %}" style="color: #28a745; text-decoration: none;">Edit</a> |
+              <a href="{% url 'customerprofile_delete' profile.pk %}" style="color: #dc3545; text-decoration: none;">Delete</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3" style="text-align: center; padding: 12px; background-color: #212529;">
+              No customer profiles found.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

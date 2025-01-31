@@ -1,0 +1,13 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<h2>Service Details</h2>
+<p><strong>Name:</strong> {{ service.name }}</p>
+<p><strong>Description:</strong> {{ service.description }}</p>
+<p><strong>Price:</strong> ${{ service.price }}</p>
+<p><strong>Service Type:</strong> {{ service.get_service_type_display }}</p>
+
+<a href="{% url 'service_update' service.pk %}">Edit</a> |
+<a href="{% url 'service_delete' service.pk %}">Delete</a> |
+<a href="{% url 'service_list' %}">Back to Services</a>
+{% endblock %}

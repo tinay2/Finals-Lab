@@ -1,0 +1,28 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<h2 style="color: #616161;">Service List</h2>
+<a href="{% url 'service_create' %}" style="color: #757575; text-decoration: none;">Add New Service</a>
+<table border="1" style="width: 100%; border-collapse: collapse; background-color: #757575; color: white;">
+    <tr style="background-color: #424242;">
+        <th style="padding: 12px; text-align: left;">Name</th>
+        <th style="padding: 12px; text-align: left;">Description</th>
+        <th style="padding: 12px; text-align: left;">Price</th>
+        <th style="padding: 12px; text-align: left;">Service Type</th>
+        <th style="padding: 12px; text-align: left;">Actions</th>
+    </tr>
+    {% for service in services %}
+    <tr style="background-color: #616161;">
+        <td style="padding: 12px;">{{ service.name }}</td>
+        <td style="padding: 12px;">{{ service.description }}</td>
+        <td style="padding: 12px;">${{ service.price }}</td>
+        <td style="padding: 12px;">{{ service.get_service_type_display }}</td>
+        <td style="padding: 12px;">
+            <a href="{% url 'service_detail' service.pk %}" style="color: #b0bec5; text-decoration: none;">View</a> |
+            <a href="{% url 'service_update' service.pk %}" style="color: #b0bec5; text-decoration: none;">Edit</a> |
+            <a href="{% url 'service_delete' service.pk %}" style="color: #b0bec5; text-decoration: none;">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

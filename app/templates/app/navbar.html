@@ -1,0 +1,32 @@
+<nav style="background-color: #333; padding: 15px;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center;">
+        <li style="margin: 0 15px;">
+            <a href="{% url 'home' %}" style="text-decoration: none; color: #ddd; font-size: 16px; padding: 10px 15px; transition: color 0.3s, background-color 0.3s; border-radius: 5px;">Home</a>
+        </li>
+        <li style="margin: 0 15px;">
+            <a href="{% url 'about' %}" style="text-decoration: none; color: #ddd; font-size: 16px; padding: 10px 15px; transition: color 0.3s, background-color 0.3s; border-radius: 5px;">About</a>
+        </li>
+        <li style="margin: 0 15px;">
+            <a href="{% url 'contact' %}" style="text-decoration: none; color: #ddd; font-size: 16px; padding: 10px 15px; transition: color 0.3s, background-color 0.3s; border-radius: 5px;">Contact</a>
+        </li>
+        <li style="margin: 0 15px;">
+            <a href="{% url 'customerprofile_list' %}" style="text-decoration: none; color: #ddd; font-size: 16px; padding: 10px 15px; transition: color 0.3s, background-color 0.3s; border-radius: 5px;">Customer Profile</a>
+        </li>
+        <li style="margin: 0 15px;">
+            <a href="{% url 'service_list' %}" style="text-decoration: none; color: #ddd; font-size: 16px; padding: 10px 15px; transition: color 0.3s, background-color 0.3s; border-radius: 5px;">Service</a>
+        </li>
+        <li style="margin: 0 15px;">
+            <a href="{% url 'payment_list' %}" style="text-decoration: none; color: #ddd; font-size: 16px; padding: 10px 15px; transition: color 0.3s, background-color 0.3s; border-radius: 5px;">Payment</a>
+        </li>
+        <li style="margin: 0 15px;">
+            <!-- Logout Button -->
+            <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" style="background-color: #363232; color: white; border: none; padding: 10px 15px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                    Logout
+                </button>
+            </form>
+        </li>
+    </ul>
+  </nav>
+  

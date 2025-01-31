@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h2>Cleaner Assignments</h2>
+  <a href="{% url 'cleaner_assignment_create' %}">Create New Assignment</a>
+  <ul>
+    {% for assignment in cleaner_assignments %}
+      <li>
+        <a href="{% url 'cleaner_assignment_detail' assignment.pk %}">
+          {{ assignment.cleaner_name }} - Appointment {{ assignment.appointment.id }}
+        </a>
+        (<a href="{% url 'cleaner_assignment_update' assignment.pk %}">Edit</a> |
+        <a href="{% url 'cleaner_assignment_delete' assignment.pk %}">Delete</a>)
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %} 

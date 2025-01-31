@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Create an Account</h1>
+        </div>
+        <form method="post" class="mt-6 space-y-4">
+            {% csrf_token %}
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                <small class="text-red-500">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div>
+                <label for="password1" class="block text-sm font-medium text-gray-700">Password</label>
+                {{ form.password1 }}
+                {% for error in form.password1.errors %}
+                <small class="text-red-500">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <div>
+                <label for="password2" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                {{ form.password2 }}
+                {% for error in form.password2.errors %}
+                <small class="text-red-500">{{ error }}</small>
+                {% endfor %}
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 transition">
+                Sign Up
+            </button>
+        </form>
+        <p class="text-center mt-4 text-gray-600">
+            Already have an account? 
+            <a href="{% url 'login' %}" class="text-blue-500 hover:underline">Log In</a>
+        </p>
+    </div>
+</body>
+</html>

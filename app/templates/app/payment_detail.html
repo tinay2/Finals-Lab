@@ -1,0 +1,21 @@
+{% extends "app/base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Service Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <p><strong>ID:</strong> {{ payment.id }}</p>
+            <h4>{{ payment.appointment }}</h4>
+            <p><strong>Payment Method:</strong> {{ payment.payment_method }}</p>
+            <p><strong>Status:</strong> {{ payment.payment_status }}</p>
+            <p><strong>Payment Date:</strong> {{ payment.payment_date }}</p>
+            <p><strong>Amount:</strong> {{ payment.amount_paid }}</p>
+        </div>
+    </div>
+    <a href="{% url 'payment_update' payment.pk %}" class="btn btn-warning mt-3">Edit Service</a>
+    <a href="{% url 'payment_delete' payment.pk %}" class="btn btn-danger mt-3">Delete</a>
+    <a href="{% url 'payment_list' %}" class="btn btn-secondary mt-3">Back to Payment</a>
+
+
+</div>
+{% endblock %}
